@@ -1,0 +1,14 @@
+<table class="tablelist">
+  <tr><th>标号</th><th>罚金金额</th><th>描述</th><th>读者姓名</th><th>所借书名</th><th>操作</th></tr>
+  <tr *ngFor="let fine of dataShow; let i=index;" class="badge">
+    <td>{{i+1+(currentPag-1)*pagNums}}</td>
+    <td>{{fine.fineAmount}}</td>
+    <td>{{fine.description}}</td>
+    <td><label *ngIf="fine.reader">{{fine.reader.name}}</label></td>
+    <td><label *ngIf="fine.book">{{fine.book.bookName}}</label></td>
+    <td><a routerLink="/index/update-fine/{{fine.id}}"><button class="update" >修改</button></a>
+      <button class="delete"  (click)="delete(fine)">删除</button></td>
+  </tr><!-- [leng]="leng"用于往子组件传递变量数据，可以是对象。-->
+  <input #readerName><button (click)="select(readerName.value)">输入读者姓名关键字搜索</button>
+  <tr><td colspan="10"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>

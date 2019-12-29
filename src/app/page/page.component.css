@@ -1,0 +1,22 @@
+#pags li,
+#paging li{
+  float: left;
+  display: inline-block;
+  border: 1px solid #DDDDDD;
+  cursor: pointer;
+  padding: 4px 0;
+}
+#paging li a,
+#pags li a{
+  padding: 4px 13px;
+}
+#paging{
+}
+select{
+  height: 30px;
+  border: 1px solid #DDDDDD;
+  cursor:pointer;
+}
+.active{
+  background-color: #EEEEEE;
+}

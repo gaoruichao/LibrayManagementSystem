@@ -1,0 +1,17 @@
+<div><div class="header" [ngStyle]="{'background-image': 'url(' + '../../assets/images/3.jpg' + ')'}">
+  <div class="lib">翰林图书馆</div>
+  <h1>图书管理系统</h1>
+  <div class="welcome">欢迎：{{user.username}}<br>
+    <a routerLink='/' >安全退出</a></div>
+</div>
+<div class="navigation">
+  <a *ngFor="let menu of menus" routerLink="{{menu.url}}" >{{menu.description}}</a>
+</div>
+<div class="kong">
+  <div class="kong1"></div>
+</div>
+<div class="bot">
+  地址：山东省济南市临港开发区凤鸣路 &nbsp;&nbsp;&nbsp;邮编：&nbsp;250101
+</div>
+  <section><router-outlet></router-outlet></section>
+</div>

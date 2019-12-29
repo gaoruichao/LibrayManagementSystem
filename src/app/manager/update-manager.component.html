@@ -1,0 +1,9 @@
+<div *ngIf="manager" class="in">
+  <h2>用户信息修改</h2><br>
+  <div>
+    <label>用户编号: </label> <input [(ngModel)]="manager.no" /><br>
+    <label>用户账号: </label> <input [(ngModel)]="manager.name"/><br>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

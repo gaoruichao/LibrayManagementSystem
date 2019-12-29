@@ -1,0 +1,14 @@
+<div class="in" *ngIf="reader">
+  <h2>读者详细信息</h2><br>
+  <div>
+    <label>读者序号: </label>{{reader.id}}<br>
+    <label>读者编号:</label> {{reader.no}}<br>
+    <label>读者姓名:</label> {{reader.name}}<br>
+    <label>读者年龄:</label> {{reader.age}}<br>
+    <label>联系方式:</label> {{reader.phone}}<br>
+    <label>注册日期:</label> {{reader.date}}<br>
+    <label *ngIf="reader.readerType">所属类型: {{reader.readerType.typeName}}</label><br>
+    <label>已借本数:</label> {{reader.borrowedNum}}<br>
+  </div>
+  <button (click)="goBack()">返回</button>
+</div>

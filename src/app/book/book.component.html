@@ -1,0 +1,23 @@
+
+<table class="tablelist">
+<input #bookName>
+  <button (click)="getBookByName(bookName.value)">书名查询</button>
+  <tr><th>标号</th><th>图书编号</th>
+    <th>图书名称</th><th>作者</th><th>出版社</th>
+    <th>出版日期</th><th>图书类型</th><th>单价</th><th>图书状态</th><th>操作</th></tr>
+  <tr *ngFor="let book of dataShow;let i=index;" class="badge">
+    <td>{{i+1+(currentPag-1)*pagNums}}</td>
+    <td>{{book.isbn}}</td>
+    <td>{{book.bookName}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.publish}}</td>
+    <td>{{book.publishDate}}</td>
+    <td><label *ngIf="book.bookType">{{book.bookType.typeName}}</label></td>
+    <td>{{book.unitPrice}}</td>
+    <td>{{book.bookStatus}}</td>
+    <td><a routerLink="/index/updateBook/{{book.id}}"><button class="update" >修改</button></a>
+      <button class="delete"  (click)="delete(book)">删除</button></td>
+  </tr><!-- [leng]="leng"用于往子组件传递变量数据，可以是对象。-->
+  <a routerLink="/index/addBook"><button > 添加图书信息 </button></a>
+  <tr><td colspan="12"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>

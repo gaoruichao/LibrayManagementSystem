@@ -1,0 +1,9 @@
+<div class="in">
+  <h2>添加新用户</h2>
+  <span>请输入以下信息： </span><br>
+  <label>用户编号:</label> <input #collegeNo />*<br>
+  <label>用户账号:</label> <input #collegeName />*<br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(collegeNo.value,collegeName.value)">保存</button>
+

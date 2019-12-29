@@ -1,0 +1,17 @@
+<div *ngIf="fine" class="in">
+  <h2>修改罚金</h2>
+  <span>所选罚金信息： </span><br>
+  <label>罚金编号:</label> <input  [(ngModel)]="fine.no" /><br>
+  <label>罚金金额:</label> <input [(ngModel)]="fine.fineAmount" /><br>
+  <label>罚金描述:</label> <input [(ngModel)]="fine.description" /><br>
+  <label>读者姓名:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->
+  <select [(ngModel)]="fine.reader" [compareWith]="compareFn">
+    <option *ngFor="let reader of readers" [ngValue]="reader">{{reader.name}}</option>
+  </select><br>
+  <label>所借书名:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->
+  <select [(ngModel)]="fine.book" [compareWith]="compareFn">
+    <option *ngFor="let book of books" [ngValue]="book">{{book.bookName}}</option>
+  </select><br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save()">保存</button>

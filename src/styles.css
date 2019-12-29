@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  padding: 0;
+  margin: 0;
+}
+.tablelist{ width:auto; border:0; margin-top:130px; }
+.tablelist tr th{
+  background-color:#DEB83B;
+  line-height:30px;
+  color: #ffffee;
+}
+.tablelist .badge{
+  background-color:#DEB887;
+  line-height:30px;
+  color:#fff;
+  text-align: center;
+  width: auto;
+}
+.tablelist .badge:hover {
+  color: #607D8B;
+  background-color: #E9967A;
+  left: .1em;
+}
+.tablelist td {
+}
+button {
+  margin-top: 0px;
+  background-color: #CD3700;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;/*手型光标，Firefox支持，IE6开始支持*/
+  cursor: hand;/*IE完全支持，但是Firefox是不支持的，手型光标*/
+  font-family: Arial;
+}
+.tablelist a {
+  color: #333;
+  text-decoration: none;
+}
+.tablelist a:hover {
+  color:#607D8B;
+}
+/*buttom{*/
+/*  margin-top: 110px;*/
+/*}*/
+.tablelist button {
+  background-color: #CD3700 !important;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  border-radius:3px;
+  margin-right: 10px;
+  cursor:hand;
+}
+.tablelist button:hover {
+  background-color: #cfd8dc;
+}
+.in{
+  margin-top: 130px;
+}
+.in input,textarea,select{
+  width:140px; line-height: 20px;
+  border-radius: 3px;
+  background-color: #eeeeff;
+  margin-bottom: 10px;
+}
+textarea{margin-top: 10px;}
+.remark{display:inline-block; padding-bottom:50px; width:70px}

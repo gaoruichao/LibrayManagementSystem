@@ -1,0 +1,11 @@
+<div *ngIf="readertype" class="in">
+  <h2>读者类型修改</h2><br>
+  <div><span>编号: </span>{{readertype.no}}</div>
+  <div>
+    <label>读者类型名称: </label> <input [(ngModel)]="readertype.typeName" /><br>
+    <label>最大借书数量: </label> <input [(ngModel)]="readertype.maxBorrowNum"/><br>
+    <label>可借书天数: </label> <textarea [(ngModel)]="readertype.limitDate" ></textarea>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

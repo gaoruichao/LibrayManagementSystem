@@ -1,0 +1,14 @@
+<div class="box-footer clearfix" style="width: 100%">
+  <ul id="paging" >
+    <li><a (click)="previous()">&laquo;</a></li>
+    <ul *ngFor="let pag of pags" id="pags">
+      <li><a (click)="gitPag(pag)" [class.active]="pag == pagCurren">{{pag}}</a></li>
+    </ul>
+    <li><a (click)="next()">&raquo;</a></li>  每页最大行数：
+    <select [(ngModel)]="pagNum" (click)="gitPagNum()">
+      <option>5</option>
+      <option>10</option>
+      <option>20</option>
+    </select> 数据总行数：{{leng}}
+  </ul>
+</div>

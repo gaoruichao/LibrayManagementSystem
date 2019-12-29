@@ -1,0 +1,21 @@
+<div class="in">
+  <h2>添加图书信息</h2>
+  <span>请输入以下信息： </span><br>
+  <label>图书编号:</label> <input #bookNo />*<br>
+  <label>图书ISBN编号:</label> <input #bookIsbn />*<br>
+  <label>图书名称:</label> <input #bookName />*<br>
+  <label>作者:</label> <input #bookAuthor />*<br>
+  <label>出版社:</label> <input #bookPublish />*<br>
+  <label>出版日期:</label> <input #bookPublishDate />*<br>
+  <label>图书类型:</label>
+  <select [(ngModel)]="bookType"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let bookType of bookTypes" [ngValue]="bookType">{{bookType.typeName}}</option>
+  </select><br>
+  <label>单价:</label> <input #bookUnitPrice />*<br>
+  <label>图书状态:</label> <input #bookStatus />*<br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(bookNo.value,bookIsbn.value,bookName.value,
+bookAuthor.value,bookPublish.value,bookPublishDate.value,Number(bookUnitPrice.value),this.bookType,
+Number(bookStatus.value))">保存</button>
+

@@ -1,0 +1,12 @@
+<table class="tablelist">
+  <tr><th>标号</th><th>账号</th><th>密码</th><th>操作</th></tr>
+  <tr *ngFor="let user of dataShow;let i=index;" class="badge">
+    <td>{{i+1+(currentPag-1)*pagNums}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.password}}</td>
+    <td> <a routerLink="/index/updateAdminUser/{{user.id}}"><button>修改</button></a>
+  </tr>
+  <a routerLink="/index/addAdminUser"><button > 添加管理员账户</button></a>
+  <tr><td colspan="4"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>
+

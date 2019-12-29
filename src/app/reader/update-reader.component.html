@@ -1,0 +1,14 @@
+<div *ngIf="reader" class="in">
+  <h2>修改读者</h2>
+  <span>所选读者信息： </span><br>
+  <label>读者编号:</label> <input  [(ngModel)]="reader.no" /><br>
+  <label>读者姓名:</label> <input [(ngModel)]="reader.name" /><br>
+  <label>读者年龄:</label> <input [(ngModel)]="reader.age" /><br>
+  <label>联系方式:</label> <input [(ngModel)]="reader.phone" /><br>
+  <label>所属类型:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->
+  <select [(ngModel)]="reader.readerType" [compareWith]="compareFn">
+    <option *ngFor="let readerType of readerTypes" [ngValue]="readerType">{{readerType.typeName}}</option>
+  </select><br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save()">提交</button>

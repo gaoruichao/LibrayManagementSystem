@@ -1,0 +1,17 @@
+<table class="tablelist">
+  <tr><th>标号</th><th>姓名</th><th>年龄</th><th>联系方式</th><th>注册日期</th><th>类型</th><th>已借本数</th><th>操作</th></tr>
+  <tr *ngFor="let reader of dataShow; let i=index;" class="badge">
+    <td>{{i+1+(currentPag-1)*pagNums}}</td>
+    <td><a routerLink="/index/detail-reader/{{reader.id}}" [queryParams]="reader">{{reader.name}}</a></td>
+    <td><a routerLink="/index/detail-reader/{{reader.id}}" [queryParams]="reader">{{reader.age}}</a></td>
+    <td><a routerLink="/index/detail-reader/{{reader.id}}" [queryParams]="reader">{{reader.phone}}</a></td>
+    <td><a routerLink="/index/detail-reader/{{reader.id}}" [queryParams]="reader">{{reader.date}}</a></td>
+    <td><label *ngIf="reader.readerType"><a routerLink="/index/detail-reader/{{reader.id}}" [queryParams]="reader">{{reader.readerType.typeName}}</a></label></td>
+    <td><a routerLink="/index/detail-reader/{{reader.id}}" [queryParams]="reader">{{reader.borrowedNum}}</a></td>
+    <td><a routerLink="/index/update-reader/{{reader.id}}"><button class="update" >修改</button></a>
+      <button class="delete"  (click)="delete(reader)">删除</button></td>
+  </tr><!-- [leng]="leng"用于往子组件传递变量数据，可以是对象。-->
+  <input #name><button (click)="select(name.value)">输入姓名关键字搜索</button>
+  <a routerLink="/index/add-reader"><button > 添加读者</button></a><br>
+  <tr><td colspan="10"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>

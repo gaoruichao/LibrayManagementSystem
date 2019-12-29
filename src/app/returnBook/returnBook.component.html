@@ -1,0 +1,15 @@
+<table class="tablelist">
+  <tr><th>标号</th><th>归还日期</th><th>读者姓名</th><th>图书名称</th><th>借阅日期</th><th>办理人姓名</th><th>操作</th></tr>
+  <tr *ngFor="let returnBook of dataShow;let i=index;" class="badge">
+    <td>{{i+1+(currentPag-1)*pagNums}}</td>
+    <td>{{returnBook.returnDate}}</td>
+    <td><label *ngIf="returnBook.reader">{{returnBook.reader.name}}</label></td>
+    <td><label *ngIf="returnBook.book">{{returnBook.book.bookName}}</label></td>
+    <td><label *ngIf="returnBook.borrowBook">{{returnBook.borrowBook.borrowDate}}</label></td>
+    <td><label *ngIf="returnBook.manager">{{returnBook.manager.name}}</label></td>
+    <td><a routerLink="/index/updateReturnBook/{{returnBook.id}}"><button>修改</button></a><button (click)="delete(returnBook)">删除</button></td>
+  </tr><!-- [leng]="leng"用于往子组件传递变量数据，可以是对象。-->
+  <input #readerName><button (click)="select(readerName.value)">输入读者姓名关键字搜索</button>
+  <a routerLink="/index/addReturnBook"><button >添加还书记录</button></a>
+  <tr><td colspan="9"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>

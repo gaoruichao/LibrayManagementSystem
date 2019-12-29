@@ -1,0 +1,20 @@
+<div *ngIf="book" class="in">
+  <h2>图书信息修改</h2><br>
+  <div><span>序号: </span>{{book.id}}</div>
+  <div>
+    <label>图书编号: </label> <input [(ngModel)]="book.no" /><br>
+    <label>图书ISBN编号: </label> <input [(ngModel)]="book.isbn" /><br>
+    <label>图书名称: </label> <input [(ngModel)]="book.bookName"/><br>
+    <label>作者: </label> <input [(ngModel)]="book.author" /><br>
+    <label>出版社: </label> <input [(ngModel)]="book.publish" /><br>
+    <label>出版日期: </label> <input [(ngModel)]="book.publishDate"/><br>
+    <label>图书类型:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->
+    <select [(ngModel)]="book.bookType" [compareWith]="compareFn">
+      <option *ngFor="let bookType of bookTypes" [ngValue]="bookType">{{bookType.typeName}}</option>
+    </select><br>
+    <label>单价: </label> <input [(ngModel)]="book.unitPrice" /><br>
+    <label>图书状态: </label> <input [(ngModel)]="book.bookStatus"/><br>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

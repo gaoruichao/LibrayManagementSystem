@@ -1,0 +1,16 @@
+
+<table class="tablelist">
+  <input #managerName>
+  <button (click)="getManagerByname(managerName.value)">用户查询</button>
+  <tr><th>标号</th><th>用户账号</th><th>操作</th></tr>
+  <tr *ngFor="let manager of dataShow; let i=index;" class="badge">
+    <td>{{i+1+(currentPag-1)*pagNums}}</td>
+    <td>{{manager.name}}</td>
+    <td> <a routerLink="/index/updateManager/{{manager.id}}"><button class="update" >修改</button></a>
+      <button class="delete" (click)="delete(manager)">删除</button></td>
+  </tr><!-- [leng]="leng"用于往子组件传递变量数据，可以是对象。-->
+  <a routerLink="/index/addManager"><button > 添加用户</button></a>
+  <tr><td colspan="5"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>
+
+

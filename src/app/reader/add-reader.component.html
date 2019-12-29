@@ -1,0 +1,14 @@
+<div class="in">
+  <h2>添加新读者</h2>
+  <span>请输入以下信息： </span><br>
+  <label>读者编号:</label> <input #readerNo />*<br>
+  <label>读者名称:</label> <input #readerName />*<br>
+  <label>读者年龄:</label> <input #readerAge />*<br>
+  <label>联系方式:</label> <input #readerPhone />*<br>
+  <label>所属类型:</label>
+  <select [(ngModel)]="readerType"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let readerType of readerTypes" [ngValue]="readerType">{{readerType.typeName}}</option>
+  </select><br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(readerNo.value,readerName.value,Number(readerAge.value),readerPhone.value,this.readerType)">提交</button>

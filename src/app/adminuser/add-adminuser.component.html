@@ -1,0 +1,11 @@
+<div class="in">
+  <h2>添加账户</h2>
+  <span>请输入以下信息： </span><br>
+  <label>姓名:</label> <input #adminUserName /><br>
+  <label>密码:</label> <input #adminUserPass /><br>
+  <label>请选择角色:</label><select [(ngModel)]="contain" [compareWith]="compareFn">
+  <option *ngFor="let contain1 of shop" >{{contain1.id}}</option>
+</select> <br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(adminUserName.value,adminUserPass.value, this.contain)">保存</button>

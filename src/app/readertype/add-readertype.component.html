@@ -1,0 +1,11 @@
+<div class="in">
+  <h2>添加读者类型</h2>
+  <h4>请输入以下信息：</h4><br>
+  <label>读者类型编号:</label> <input #no placeholder="必填项"/><font style="color:red">*</font><br>
+  <label>读者类型名称:</label> <input #typeName placeholder="必填项"/><font style="color:red">*</font><br>
+  <label>最大借书数量:</label> <input #maxBorrowNum placeholder="请输入有效数字" />*<br>
+  <label>可借书天数:</label> <input #limitDate placeholder="请输入有效数字" />*<br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(no.value, typeName.value, maxBorrowNum.value,  limitDate.value)">保存</button>
+

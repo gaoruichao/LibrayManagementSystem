@@ -1,0 +1,10 @@
+<div *ngIf="user" class="in">
+  <h2>修改账户</h2>
+  <div>
+    <label>账号: </label> <input [(ngModel)]=user.username /><br>
+    <label>密码: </label> <input [(ngModel)]=user.password><br>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>
+

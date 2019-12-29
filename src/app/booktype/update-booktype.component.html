@@ -1,0 +1,9 @@
+<div *ngIf="bookType" class="in">
+  <h2>图书类型信息修改</h2><br>
+  <div>
+    <label>图书类型编号: </label> <input [(ngModel)]="bookType.no"/><br>
+    <label>图书类型名称: </label> <input [(ngModel)]="bookType.typeName"/><br>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

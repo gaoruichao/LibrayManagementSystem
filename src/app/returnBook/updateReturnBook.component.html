@@ -1,0 +1,25 @@
+<div *ngIf="returnBook" class="in">
+  <h2>修改借阅记录</h2>
+  <span>借阅记录信息： </span><br>
+  <label>借书编号:</label> <input [(ngModel)]=returnBook.no /><br>
+  <label>归还日期:</label> <input [(ngModel)]=returnBook.returnDate /><br>
+  <label>读者姓名:</label>
+  <select [(ngModel)]="returnBook.reader" [compareWith]="compareFn"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let reader of readers" [ngValue]="reader">{{reader.name}}</option>
+  </select><br>
+  <label>图书名称:</label>
+  <select [(ngModel)]="returnBook.book" [compareWith]="compareFn" (change)=" getBorBook(returnBook.book.id)" ><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let book of books" [ngValue]="book">{{book.bookName}}</option>
+  </select><br>
+  <label>借阅日期:</label>
+  <select [(ngModel)]="returnBook.borrowBook" [compareWith]="compareFn"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let borrowBook of borrowBooks" [ngValue]="borrowBook">{{borrowBook.borrowDate}}</option>
+  </select><br>
+  <label>办理人姓名:</label>
+  <select [(ngModel)]="returnBook.manager" [compareWith]="compareFn">
+    <option *ngFor="let manager of managers" [ngValue]="manager">{{manager.name}}</option>
+  </select><br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save()">保存</button>
+

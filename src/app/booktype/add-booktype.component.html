@@ -1,0 +1,10 @@
+
+<div class="in">
+  <h2>添加新图书类型</h2>
+  <span>请输入以下信息： </span><br>
+  <label>图书类型序号:</label> <input #no placeholder="必填项" /><font style="color:red">*</font><br>
+  <label>图书类型名称:</label> <input #typeName placeholder="必填项" /><font style="color:red">*</font><br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(no.value, typeName.value)">保存</button>
+
